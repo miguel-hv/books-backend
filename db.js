@@ -8,7 +8,9 @@ const DB_CONFIG = {
 };
 
 // connect MongoDB through mongoose
+//TODO: delete console log
 const connect = ()=> {    
+    console.log('tryna connect');
     mongoose.connect(DB_URL, DB_CONFIG)
     .then(res => {
         const { name, host } = res.connection;

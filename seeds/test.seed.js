@@ -1,6 +1,8 @@
+//TODO: delete file
+
 const mongoose = require('mongoose');
  
-const { DB_URL, DB_CONFIG } = require('./db');
+const { DB_URL, DB_CONFIG } = require('../db');
 
 const Schema = mongoose.Schema;
 

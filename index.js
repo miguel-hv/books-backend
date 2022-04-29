@@ -8,6 +8,7 @@ const app = express();
 
 const router = express.Router();
 const authorsRoutes = require('./routes/authors.routes');
+const booksRoutes = require('./routes/books.routes');
 
 const { urlencoded } = require('express');
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(urlencoded({ extended: false }));
 
 app.use('/authors', authorsRoutes);
+app.use('/books', booksRoutes);
 
 app.use('/', router);
 

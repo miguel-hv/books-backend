@@ -1,23 +1,23 @@
-const Author = require("../models/Author.model");
+const Book = require("../models/Book.model");
 
 
-const authorsGet = async (req, res) => {
+const booksGet = async (req, res) => {
 
 	try {
-		const authors = await Author.find();
-		return res.status(200).json(authors);
+		const books = await Book.find();
+		return res.status(200).json(books);
 
 	} catch (err) {
 		return res.status(400).json(err);
 	}
 };
 
-const authorGet =  async (req, res) => {
+const bookGet =  async (req, res) => {
 
     try {
       const id = req.params.id;
-      const selectedAuthor = await Author.findById(id);
-      return res.status(200).json(selectedAuthor);
+      const selectedBook = await Book.findById(id);
+      return res.status(200).json(selectedBook);
   
     } catch (err) {
       console.log(err);
@@ -26,6 +26,6 @@ const authorGet =  async (req, res) => {
 };
 
 module.exports = {
-    authorsGet,
-    authorGet,
+    booksGet,
+    bookGet,
 };

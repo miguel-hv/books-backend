@@ -4,6 +4,5 @@ const router = express.Router();
 
 
 router.get("/", controller.booksGet);
-router.get("/:id", controller.bookGet);
 
 module.exports = router;

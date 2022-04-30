@@ -23,7 +23,7 @@ const router = express.Router();
 const authorsRoutes = require('./routes/authors.routes');
 const authorRoutes = require('./routes/author.routes');
 const booksRoutes = require('./routes/books.routes');
-// const bookRoutes = require('./routes/book.routes');
+const bookRoutes = require('./routes/book.routes');
 
 const { urlencoded } = require('express');
 
@@ -34,7 +34,7 @@ app.use(urlencoded({ extended: false }));
 app.use('/authors', authorsRoutes);
 app.use('/author', authorRoutes);
 app.use('/books', booksRoutes);
-// app.use('/book', bookRoutes);
+app.use('/book', bookRoutes);
 
 app.use('/', router);
 

@@ -12,20 +12,7 @@ const authorsGet = async (req, res) => {
 	}
 };
 
-const authorGet =  async (req, res) => {
-
-    try {
-      const id = req.params.id;
-      const selectedAuthor = await Author.findById(id);
-      return res.status(200).json(selectedAuthor);
-  
-    } catch (err) {
-      console.log(err);
-      return res.status(400).json(err);
-    }
-};
 
 module.exports = {
     authorsGet,
-    authorGet,
 };

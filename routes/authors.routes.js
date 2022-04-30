@@ -4,6 +4,5 @@ const router = express.Router();
 
 
 router.get("/", controller.authorsGet);
-router.get("/:id", controller.authorGet);
 
 module.exports = router;

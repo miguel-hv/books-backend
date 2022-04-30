@@ -21,7 +21,9 @@ app.use(cors({
 
 const router = express.Router();
 const authorsRoutes = require('./routes/authors.routes');
+const authorRoutes = require('./routes/author.routes');
 const booksRoutes = require('./routes/books.routes');
+// const bookRoutes = require('./routes/book.routes');
 
 const { urlencoded } = require('express');
 
@@ -30,9 +32,22 @@ app.use(express.json());
 app.use(urlencoded({ extended: false }));
 
 app.use('/authors', authorsRoutes);
+app.use('/author', authorRoutes);
 app.use('/books', booksRoutes);
+// app.use('/book', bookRoutes);
 
 app.use('/', router);
+
+app.use('*', (req, res, next) => {
+  const error = new Error('Route not found');
+  error.status = 404;
+  next(error);
+});
+
+app.use((err, req, res, next) => {
+  console.log('Error handler ', err);
+  res.status(err.status || 500).json(err.message || "Unexpected error")
+});
 
 app.listen(PORT, () => {
   console.log(`Server running in http://localhost:${PORT}`);

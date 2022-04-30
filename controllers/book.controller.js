@@ -5,7 +5,7 @@ const bookGet =  async (req, res) => {
 
     try {
       const id = req.params.id;
-      const selectedBook = await Book.findById(id);
+      const selectedBook = await Book.findById(id).populate('author');;
       return res.status(200).json(selectedBook);
   
     } catch (err) {

@@ -12,6 +12,25 @@ const authorsArray = [
         first_name : "Ellen",
         last_name : "Støkken Dahl",
     },
+    {
+        first_name : "Robert",
+        last_name : "Graves",
+    },
+    {
+        first_name : "Robert J.",
+        last_name : "Ringer",
+    },
+    {
+        first_name : "Robert C.",
+        last_name : "Martin",
+    },
+    {
+        first_name : "Dean",
+        last_name : "Wampler",
+    },    {
+        first_name : "Garci",
+        last_name : "Rodríguez de Montalvo",
+    },
     
 ];
 

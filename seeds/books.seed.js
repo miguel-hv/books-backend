@@ -7,9 +7,30 @@ const Author = require("../models/Author.model");
 const booksArray = [
     {
         name : "The wonder down under",
-        isbn: "978-1-68144-021-7",
+        isbn: "978-1681440217",
         author: [],
     },    
+    {
+        name : "Good-Bye to All That: An Autobiography",
+        isbn: "978-0385093309",
+        author: [],
+    }, 
+    {
+        name : "Winning through Intimidation",
+        isbn: "978-0449207864",
+        author: [],
+    }, 
+    {
+        name : "Clean Code: A Handbook of Agile Software Craftsmanship",
+        isbn: "978-0132350884",
+        author: [],
+    }, 
+    {
+        name : "El Amadís de Gaula",
+        isbn: "978-1293962527",
+        author: [],
+    }, 
+    
 ];
 
 const bookDocuments = booksArray.map((book) => new Book(book));

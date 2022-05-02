@@ -17,7 +17,8 @@ app.use((req, res, next) => {
 });
 
 app.use(cors({
-  origin: ['http://localhost:3000'], //todo: add heroku name,
+  // origin: ['http://localhost:3000'], 
+  origin: ['https://soamee.herokuapp.com/'], 
   credentials: true, 
 }));
 

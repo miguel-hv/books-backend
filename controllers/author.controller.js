@@ -30,7 +30,25 @@ const authorPost = async (req, res, next) => {
     }
 };
 
+const authorPut = async (req, res, next) => {
+    try {
+        const { _id: id, ...update } = req.body;
+
+        const updatedAuthor = await Author.findByIdAndUpdate(
+            id,
+            update,
+            { new: true }
+        );
+
+        return res.status(200).json(updatedAuthor);
+    } catch (err) {
+        console.log("author update error: ", err);
+        return res.status(400).json("The update was not done");
+    }
+};
+
 module.exports = {
     authorGet,
-    authorPost
+    authorPost,
+    authorPut
 };

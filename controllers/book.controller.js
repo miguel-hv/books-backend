@@ -32,7 +32,36 @@ const bookPost = async (req, res, next) => {
   }
 };
 
+const bookPut = async (req, res, next) => {
+  try {
+      const { _id: id, ...update } = req.body;
+
+      const updatedBook = await Book.findByIdAndUpdate(
+          id,
+          update,
+          { new: true }
+      );
+
+      return res.status(200).json(updatedBook);
+  } catch (err) {
+      // console.log("author update error: ", err);
+      return res.status(400).json("The update was not done");
+  }
+};
+
+const bookDelete = async (req, res, next) => {
+  try {
+      const id = req.params.id;
+      const deletedBook = await Book.findByIdAndDelete(id);
+      return res.status(200).json(deletedBook);
+  } catch (err) {
+      // console.log('author delete error');
+      res.status(400).json('The album could not be deleted');
+  }
+};
 module.exports = {
     bookGet,
     bookPost,
+    bookPut,
+    bookDelete
 };

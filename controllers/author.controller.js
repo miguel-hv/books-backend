@@ -42,13 +42,25 @@ const authorPut = async (req, res, next) => {
 
         return res.status(200).json(updatedAuthor);
     } catch (err) {
-        console.log("author update error: ", err);
+        // console.log("author update error: ", err);
         return res.status(400).json("The update was not done");
+    }
+};
+
+const authorDelete = async (req, res, next) => {
+    try {
+        const id = req.params.id;
+        const deletedAuthor = await Author.findByIdAndDelete(id);
+        return res.status(200).json(deletedAuthor);
+    } catch (err) {
+        // console.log('author delete error');
+        res.status(400).json('The album could not be deleted');
     }
 };
 
 module.exports = {
     authorGet,
     authorPost,
-    authorPut
+    authorPut,
+    authorDelete
 };
